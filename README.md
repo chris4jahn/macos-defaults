@@ -146,4 +146,4 @@ You can specify a custom path directly. The script will automatically detect if 
 
 ## License
 
-This project is licensed under the **BSD 2-Clause License**.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
