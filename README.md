@@ -133,7 +133,7 @@ The `import_defaults.sh` script imports macOS defaults from `.plist` files in th
 
 ## Custom Path
 
-You can specify a custom path directly (without using the `-c` flag). The script will automatically detect if the first argument is a valid directory path and use it for the operation.
+You can specify a custom path directly. The script will automatically detect if the first argument is a valid directory path and use it for the operation.
 
 ### Example:
 
