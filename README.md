@@ -32,7 +32,7 @@ It's a good idea to export the current defaults using `export_defaults.sh` befor
 1. Clone the repository from GitHub:
 
     ```bash
-    git clone https://github.com/your-username/macos-defaults-scripts.git
+    git clone https://github.com/brokosz/macos-defaults-scripts.git
     ```
 
 2. Navigate into the cloned repository:
