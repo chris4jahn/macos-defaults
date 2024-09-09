@@ -46,23 +46,21 @@ while [[ $# -gt 0 ]]; do
             show_help
             ;;
         *)
-            # If the argument is a valid directory, treat it as a custom directory
-            if [[ -d "$1" ]]; then
-                output_dir="$1"
-                shift
-            else
-                echo "Invalid option or directory: $1"
-                show_help
-            fi
+            # If the argument is not a predefined option, treat it as a custom directory
+            output_dir="$1"
+            shift
             ;;
     esac
 done
 
+# Create the custom output directory if it doesn't exist
+if [[ ! -d "$output_dir" ]]; then
+    echo "Directory $output_dir does not exist, creating it now..."
+    mkdir -p "$output_dir"
+fi
+
 # Display the output directory being used
 echo "Using output directory: $output_dir"
-
-# Create the output directory if it doesn't exist
-mkdir -p "$output_dir"
 
 # Get all defaults domains
 domains=$(defaults domains | tr -d ',')
