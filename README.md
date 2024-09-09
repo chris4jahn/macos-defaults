@@ -63,7 +63,7 @@ It's a good idea to export the current defaults using `export_defaults.sh` befor
 
 ### export_defaults.sh
 
-The `export_defaults.sh` script exports macOS defaults to the specified directory. If no directory is specified, it defaults to `~/.config/defaults`.
+The `export_defaults.sh` script exports macOS defaults to the specified directory. If no directory is specified, it defaults to `~/.config/defaults`. **If a custom directory is specified but doesn't exist, the script will create it automatically.**
 
 ```bash
 ./export_defaults.sh [custom_output_directory] [options]
@@ -89,7 +89,7 @@ The `export_defaults.sh` script exports macOS defaults to the specified director
   ./export_defaults.sh -i
   ```
 
-- Export to a custom directory:
+- Export to a custom directory (if it doesn’t exist, it will be created):
   ```bash
   ./export_defaults.sh /path/to/custom/dir
   ```
@@ -133,7 +133,7 @@ The `import_defaults.sh` script imports macOS defaults from `.plist` files in th
 
 ## Custom Path
 
-You can specify a custom path directly. The script will automatically detect if the first argument is a valid directory path and use it for the operation.
+You can specify a custom path directly. The script will automatically detect if the first argument is a valid directory path and use it for the operation. **If the custom directory doesn't exist, it will be created automatically.**
 
 ### Example:
 
