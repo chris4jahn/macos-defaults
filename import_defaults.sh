@@ -1,11 +1,12 @@
-#!/bin/bash
+#!/bin/zsh
 
 # Default input directories for various options
-default_dir="$HOME/.config/defaults"
+default_dir="$HOME/Library/Mobile Documents/com~apple~CloudDocs/config/defaults"
 dropbox_dir="$HOME/Dropbox/config/defaults"
 icloud_dir="$HOME/Library/Mobile Documents/com~apple~CloudDocs/config/defaults"
 workdocs_dir="$HOME/Library/CloudStorage/WorkDocsDrive-Documents/config/defaults"
 box_dir="$HOME/Library/CloudStorage/Box-Box/config/defaults"  # Box.com default directory
+$zipPath="$HOME/Library/Mobile Documents/com~apple~CloudDocs/config/defaults/defaults.zip"
 
 # Show help if the user asks for it
 function show_help {
@@ -60,6 +61,9 @@ done
 
 # Display the input directory being used
 echo "Using input directory: $input_dir"
+
+# Extract the zip file
+    unzip -q "$zipPath" -d "$input_dir"
 
 # Check if directory exists
 if [ ! -d "$input_dir" ]; then

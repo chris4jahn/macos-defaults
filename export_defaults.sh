@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/bin/zsh
 
-# Default output directories for various options
-default_dir="$HOME/.config/defaults"
+# Default output directory
+default_dir="$HOME/Library/Mobile Documents/com~apple~CloudDocs/config/defaults"
 dropbox_dir="$HOME/Dropbox/config/defaults"
 icloud_dir="$HOME/Library/Mobile Documents/com~apple~CloudDocs/config/defaults"
 workdocs_dir="$HOME/Library/CloudStorage/WorkDocsDrive-Documents/config/defaults"
@@ -80,6 +80,12 @@ for domain in $domains; do
     echo "Exported $domain to $output_file"
     file_count=$((file_count + 1)) # Increment the file counter
 done
+
+# Create a zip archive of the output directory
+cd "$output_dir"
+zip -q -r defaults.zip .
+# Remove all plist files from the output directory
+rm -rf "$output_dir"/*.plist
 
 # Print the final message
 echo -e "\n***\n\nAll exports are complete. $file_count .plist files were created in $output_dir."
